@@ -1,4 +1,11 @@
 <?php
+/*
+Name: Christian Guadalupe
+Date: 02/11/2026
+Course: IT-202-XXX Internet Applications
+Assignment: Phase 1 - Shirt Inventory Website
+Email: cg546@njit.edu
+*/
 function getDB($echo_mode = false) {
     $host = 'localhost';
     $port = 3306;

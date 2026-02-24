@@ -1,4 +1,12 @@
 <?php
+/*
+Name: Christian Guadalupe
+Date: 02/11/2026
+Course: IT-202-XXX Internet Applications
+Assignment: Phase 1 - Shirt Inventory Website
+Email: cg546@njit.edu
+*/
+
 session_start();
 
 if (!isset($_SESSION['login'])) {
@@ -24,6 +32,8 @@ if (!isset($_SESSION['login'])) {
 <?php
 } else {
     echo "<h2>Welcome to the Shirt Inventory Website, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
+    echo "<p>Email: {$_SESSION['emailAddress']}</p>";
+    echo "<p>Phone Number: {$_SESSION['phoneNumber']}</p>";
 ?>
 <br><br>
 <p>This program tracks shirt inventory</p>

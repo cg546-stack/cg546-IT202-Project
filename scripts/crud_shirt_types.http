@@ -1,0 +1,32 @@
+### ADD
+POST http://localhost:3000/add_shirt_type.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtTypeID=1
+&shirtTypeCode=GRAPH
+&shirtTypeName=Graphic
+&shelfNumber=10
+
+###
+
+### LIST
+GET http://localhost:3000/list_shirt_types.test.php
+
+###
+
+### UPDATE
+POST http://localhost:3000/change_shirt_type.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtTypeID=1
+&shirtTypeCode=BTN
+&shirtTypeName=Button-Up
+&shelfNumber=12
+
+###
+
+### DELETE
+POST http://localhost:3000/remove_shirt_type.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtTypeID=1

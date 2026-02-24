@@ -1,0 +1,200 @@
+### ADD SHIRT
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=1
+&shirtCode=GR001
+&shirtName=Premium Graphic Tee
+&shirtDescription=A bold graphic tee for everyday wear. Super comfortable and easy to style.
+&fabricType=Cotton
+&fit=Regular
+&shirtTypeID=1
+&buyPrice=12.50
+&sellPrice=29.99
+###
+GET http://localhost:3000/list_shirts.test.php
+### UPDATE (Change Shirt)
+POST http://localhost:3000/change_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=1
+&shirtCode=GR001
+&shirtName=Retro Graphic Tee UPDATED
+&shirtDescription=Updated description. Still comfortable and durable.
+&fabricType=Cotton
+&fit=Regular
+&shirtTypeID=1
+&buyPrice=13.00
+&sellPrice=26.99
+###
+POST http://localhost:3000/remove_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=1
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=4
+&shirtCode=GR002
+&shirtName=Street Graphic Tee
+&shirtDescription=A bold streetwear graphic tee designed for everyday style and comfort. The soft cotton fabric makes it perfect for casual outfits.
+&fabricType=Cotton
+&fit=Regular
+&shirtTypeID=1
+&buyPrice=8.50
+&sellPrice=24.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=5
+&shirtCode=GR003
+&shirtName=Vintage Print Tee
+&shirtDescription=A vintage-inspired graphic tee that adds a retro vibe to any wardrobe. Built for comfort and long-lasting wear.
+&fabricType=Cotton
+&fit=Regular
+&shirtTypeID=1
+&buyPrice=9.00
+&sellPrice=26.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=6
+&shirtCode=GR004
+&shirtName=Neon Logo Tee
+&shirtDescription=A vibrant neon logo tee that stands out in low-light environments. Perfect for streetwear enthusiasts and casual looks.
+&fabricType=Cotton
+&fit=Slim
+&shirtTypeID=1
+&buyPrice=10.00
+&sellPrice=29.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=7
+&shirtCode=GR005
+&shirtName=Minimal Graphic Tee
+&shirtDescription=A clean minimal graphic tee for a modern understated look. Lightweight and comfortable for daily wear.
+&fabricType=Cotton
+&fit=Regular
+&shirtTypeID=1
+&buyPrice=7.75
+&sellPrice=22.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=8
+&shirtCode=BU002
+&shirtName=Slim Oxford Shirt
+&shirtDescription=A slim-fit oxford shirt designed for both business and casual settings. Breathable fabric keeps you comfortable all day.
+&fabricType=Oxford Cotton
+&fit=Slim
+&shirtTypeID=2
+&buyPrice=18.00
+&sellPrice=49.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=9
+&shirtCode=BU003
+&shirtName=Formal Dress Shirt
+&shirtDescription=A crisp formal dress shirt ideal for professional environments. Designed with smooth fabric and a tailored silhouette.
+&fabricType=Poly Cotton
+&fit=Regular
+&shirtTypeID=2
+&buyPrice=20.00
+&sellPrice=54.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=10
+&shirtCode=BU004
+&shirtName=Casual Chambray Shirt
+&shirtDescription=A lightweight chambray button-up that works great for relaxed occasions. Durable stitching ensures long-term wear.
+&fabricType=Chambray
+&fit=Regular
+&shirtTypeID=2
+&buyPrice=17.50
+&sellPrice=44.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=11
+&shirtCode=BU005
+&shirtName=Business Button-Up
+&shirtDescription=A professional button-up shirt built for office environments. Comfortable fabric blend keeps you looking sharp.
+&fabricType=Cotton Blend
+&fit=Regular
+&shirtTypeID=2
+&buyPrice=19.00
+&sellPrice=52.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=12
+&shirtCode=FL002
+&shirtName=Plaid Outdoor Flannel
+&shirtDescription=A warm plaid flannel perfect for outdoor activities and colder weather. Soft brushed fabric provides excellent comfort.
+&fabricType=Flannel
+&fit=Relaxed
+&shirtTypeID=3
+&buyPrice=16.50
+&sellPrice=42.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=13
+&shirtCode=FL003
+&shirtName=Heavyweight Flannel
+&shirtDescription=A heavyweight flannel shirt designed for maximum warmth during winter. Durable construction makes it long lasting.
+&fabricType=Flannel
+&fit=Relaxed
+&shirtTypeID=3
+&buyPrice=18.00
+&sellPrice=48.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=14
+&shirtCode=FL004
+&shirtName=Classic Lumberjack Flannel
+&shirtDescription=A classic lumberjack-style flannel with timeless plaid patterns. Ideal for layering in cold weather.
+&fabricType=Flannel
+&fit=Regular
+&shirtTypeID=3
+&buyPrice=17.25
+&sellPrice=45.99
+
+###
+POST http://localhost:3000/add_shirt.test.php
+Content-Type: application/x-www-form-urlencoded
+
+shirtID=15
+&shirtCode=FL005
+&shirtName=Soft Brushed Flannel
+&shirtDescription=A soft brushed flannel shirt that delivers both warmth and comfort. Perfect for casual fall and winter outfits.
+&fabricType=Flannel
+&fit=Relaxed
+&shirtTypeID=3
+&buyPrice=15.75
+&sellPrice=39.99

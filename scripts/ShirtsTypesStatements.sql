@@ -1,5 +1,9 @@
 USE shirt;
-
+-- Name: Christian Guadalupe
+-- Date: 02/24/2026
+-- Course: IT-202
+-- Section: YOUR SECTION
+-- Assignment: Phase 2
 CREATE TABLE shirt_types (
   shirt_type_id INT NOT NULL,
   shirt_type_code VARCHAR(255) NOT NULL UNIQUE,

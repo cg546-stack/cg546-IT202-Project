@@ -1,21 +1,19 @@
 <?php
 /*
 Name: Christian Guadalupe
+Course: IT 202
 Date: 02/11/2026
-Course: IT-202-XXX Internet Applications
-Assignment: Phase 1 - Shirt Inventory Website
+Assignment: IT-202 Phase 1 - Shirt Inventory Website
 Email: cg546@njit.edu
 */
-
-session_start();
-
-if (!isset($_SESSION['login'])) {
 ?>
 
-<h2>Please Login to the Shirt Inventory Website</h2><br>
-
-<form name="login" action="validate.inc.php" method="post">
-
+<?php
+if (!isset($_SESSION['login'])) {
+?>
+  <h2>Welcome please login to the Shirt Inventory Website</h2>
+  <br>
+  <form name="login" action="index.php" method="post">
     <label>Email:</label>
     <input type="text" name="email_address" size="20">
     <br><br>
@@ -26,20 +24,17 @@ if (!isset($_SESSION['login'])) {
 
     <input type="submit" value="Login">
     <input type="hidden" name="content" value="validate">
-
-</form>
-
+  </form>
 <?php
+
 } else {
-    echo "<h2>Welcome to the Shirt Inventory Website, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
-    echo "<p>Email: {$_SESSION['emailAddress']}</p>";
-    echo "<p>Phone Number: {$_SESSION['phoneNumber']}</p>";
+   echo "<h2>Welcome to the Shirt Inventory Helper, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
 ?>
-<br><br>
-<p>This program tracks shirt inventory</p>
-<p>Please use the links in the navigation window</p>
-<p>Please DO NOT use the browser navigation buttons!</p>
-<a href="index.php?content=logout"><strong>Logout</strong></a>
+   <br><br>
+   <p>This program tracks shirt type and shirt inventory</p>
+   <p>Please use the links in the navigation window</p>
+   <p>Please DO NOT use the browser navigation buttons!</p>
+   <a href="index.php?content=logout"><strong>Logout</strong></a>
 <?php
 }
 ?>

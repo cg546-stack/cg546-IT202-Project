@@ -5,40 +5,34 @@ Date: 03/11/2026
 Course: IT-202-XXX
 Assignment: Phase 2
 */
-require_once("shirt.php");
+require_once("shirt_type.php");
 
-// Fetching shirts using your Shirt class
-$shirts = Shirt::getShirts();
+// Fetching shirt types using ShirtType class
+$shirtTypes = ShirtType::getShirtTypes();
 
-if ($shirts) {
+if ($shirtTypes) {
 ?>
-    <h2>Select Shirt</h2>
-    <form name="shirts" method="post">
-        <select name="shirtID" size="20">
-            <?php
-            $first = true;
-
-            foreach ($shirts as $shirt) {
-                // Mapping to your database column names (assuming standard naming)
-                $shirtID = $shirt->shirtID;
-                $shirtName = $shirt->shirtName;
-                $shirtPrice = $shirt->price;
-
-                $option = $shirtID . " - " . $shirtName . " - $" . $shirtPrice;
-
-                if ($first) {
-                    // Fixed the quotes here so PHP doesn't get confused
-                    echo "<option value='$shirtID' selected>$option</option>\n";
-                    $first = false;
-                } else {
-                    echo "<option value='$shirtID'>$option</option>\n";
-                }
-            }
-            ?>
-        </select>
-    </form>
+    <h2>List Shirt Types</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Shirt Type ID</th>
+            <th>Shirt Type Code</th>
+            <th>Shirt Type Name</th>
+            <th>Shelf Number</th>
+        </tr>
+        <?php
+        foreach ($shirtTypes as $shirtType) {
+            echo "<tr>";
+            echo "<td>" . $shirtType->shirtTypeID . "</td>";
+            echo "<td>" . $shirtType->shirtTypeCode . "</td>";
+            echo "<td>" . $shirtType->shirtTypeName . "</td>";
+            echo "<td>" . $shirtType->shelfNumber . "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
 <?php
 } else {
-    echo "<h2>No Shirts found.</h2>";
+    echo "<h2>No Shirt Types found.</h2>";
 }
 ?>

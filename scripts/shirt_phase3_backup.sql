@@ -1,3 +1,6 @@
+-- Christian Guadalupe
+-- IT202 Phase 3
+-- Shirt Inventory Database
 -- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
 -- Host: localhost    Database: shirt

@@ -14,12 +14,11 @@ $shirts = Shirt::getShirts();
 if ($shirts) {
 ?>
     <h2>Select Shirt</h2>
-    <form name="shirts" method="post">
+    <form name="shirts" method="post" action="index.php">
         <select name="shirtID" size="20">
             <?php
             $first = true;
             foreach ($shirts as $shirt) {
-                // Property names must match your Shirt class exactly
                 $shirtID = $shirt->shirtID;
                 $shirtName = $shirt->shirtName;
                 $price = $shirt->sellPrice;
@@ -35,6 +34,11 @@ if ($shirts) {
             }
             ?>
         </select>
+
+        <br><br>
+        <input type="hidden" name="content" value="updateshirt">
+        <input type="submit" value="Update Shirt">
+
     </form>
 <?php
 } else {

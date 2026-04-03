@@ -18,6 +18,8 @@ require_once("shirt.php");
 
 <head>
 <title>Shirt Inventory Helper</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/logo.png">
 </head>
 
 <body>

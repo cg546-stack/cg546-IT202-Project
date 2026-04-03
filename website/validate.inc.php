@@ -6,14 +6,18 @@ Date: 02/11/2026
 Assignment: IT-202 Phase 1 - Shirt Inventory Website
 Email: cg546@njit.edu
 */
-?>
-
-<?php
-session_start();
 
 require_once('database.php');
 
 $emailAddress = $_POST['email_address'];
+
+/* 1.1: validate email using filter_var() */
+if (!filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
+    echo "<h2>Invalid email format</h2>";
+    echo '<a href="index.php">Go back</a>';
+    exit();
+}
+
 $password = $_POST['password'];
 
 $query = "SELECT email_address, pronouns, first_name, last_name, phone_number 

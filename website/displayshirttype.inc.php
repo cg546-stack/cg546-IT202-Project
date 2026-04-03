@@ -1,5 +1,12 @@
 <?php
-
+/*
+Name: Christian Guadalupe
+Date: 03/11/2026
+Course: IT-202 Internet Applications
+Section: XXX
+Assignment: Phase 3 - Shirt Inventory Website
+Email: cg546@njit.edu
+*/
 if (!isset($_POST['shirtTypeID']) || !is_numeric($_POST['shirtTypeID'])) {
 ?>
 

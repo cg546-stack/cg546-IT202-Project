@@ -26,7 +26,6 @@ if (!isset($_SESSION['login'])) {
     <input type="hidden" name="content" value="validate">
   </form>
 <?php
-
 } else {
    echo "<h2>Welcome to the Shirt Inventory Helper, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
 ?>

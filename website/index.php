@@ -3,7 +3,7 @@
 Name: Christian Guadalupe
 Date: 02/11/2026
 Course: IT-202 Internet Applications
-Assignment: Phase 1 - Shirt Inventory Website
+Assignment: Phase 5 - JavaScript
 Email: cg546@njit.edu
 */
 
@@ -20,6 +20,7 @@ require_once("shirt.php");
 <title>Shirt Inventory Helper</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="images/logo.png">
+<script src="realtime.js"></script>
 </head>
 
 <body>
@@ -28,28 +29,35 @@ require_once("shirt.php");
 <?php include("header.inc.php"); ?>
 </header>
 
-<section style="display:flex; min-height:425px;">
+<section>
 
-<nav style="width:250px;">
+<nav>
 <?php include("nav.inc.php"); ?>
 </nav>
 
-<main style="flex:1; padding-left:20px;">
-
+<main>
 <?php
 if (isset($_REQUEST['content'])) {
     include($_REQUEST['content'] . ".inc.php");
-}
-else {
+} else {
     include("main.inc.php");
 }
 ?>
-
 </main>
+
+<?php if (isset($_SESSION['login'])) { ?>
+<aside>
+    <?php include("aside.inc.php"); ?>
+    <script>
+        getRealTime();
+        setInterval(getRealTime, 5000);
+    </script>
+</aside>
+<?php } ?>
 
 </section>
 
-<footer style="margin-top:40px;">
+<footer>
 <?php include("footer.inc.php"); ?>
 </footer>
 

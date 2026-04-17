@@ -1,3 +1,10 @@
+/*
+Name: Christian Guadalupe
+Date: 03/11/2026
+Course: IT-202-XXX Internet Applications
+Assignment: Phase 5 - JavaScript
+Email: cg546@njit.edu
+*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -142,6 +149,12 @@ nav input[type="submit"] {
 
 nav input[type="submit"]:hover {
     background-color: #0047cc;
+}
+
+/* Section wrapper */
+section {
+    flex: 1;
+    display: flex;
 }
 
 /* Main content area */

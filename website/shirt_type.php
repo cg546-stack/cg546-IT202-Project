@@ -3,7 +3,7 @@
 Name: Christian Guadalupe
 Date: 02/24/2026
 Course: IT-202-XXX Internet Applications
-Assignment: Phase 1 - Shirt Inventory Website
+Assignment: Phase 5 - JavaScript
 Email: cg546@njit.edu
 */
 require_once('database.php');
@@ -13,7 +13,7 @@ class ShirtType
     public $shirtTypeID;
     public $shirtTypeCode;
     public $shirtTypeName;
-    public $shelfNumber; // ✅ extra column required by your table
+    public $shelfNumber;
 
     function __construct($shirtTypeID, $shirtTypeCode, $shirtTypeName, $shelfNumber)
     {
@@ -28,7 +28,6 @@ class ShirtType
         return "<h2>$this->shirtTypeID - $this->shirtTypeCode, $this->shirtTypeName (Shelf: $this->shelfNumber)</h2>\n";
     }
 
-    // 🔍 FIND ONE
     static function findShirtType($shirtTypeID)
     {
         $db = getDB();
@@ -51,7 +50,6 @@ class ShirtType
         }
     }
 
-    // ➕ INSERT
     function saveShirtType()
     {
         $db = getDB();
@@ -80,7 +78,6 @@ class ShirtType
         return $result;
     }
 
-    // 📄 LIST ALL
     static function getShirtTypes()
     {
         $db = getDB();
@@ -109,7 +106,6 @@ class ShirtType
         }
     }
 
-    // ✏️ UPDATE
     function updateShirtType()
     {
         $db = getDB();
@@ -137,7 +133,28 @@ class ShirtType
         return $result;
     }
 
-    // 🗑️ REMOVE
+    // ✏️ UPDATE STATIC - called by listshirttypes.inc.php
+    static function updateShirtTypeByID($id, $code, $name, $shelf)
+    {
+        $db = getDB();
+
+        $query = "UPDATE shirt_types
+                  SET shirt_type_code = ?, shirt_type_name = ?, shelf_number = ?
+                  WHERE shirt_type_id = ?";
+
+        $stmt = $db->prepare($query);
+        if ($stmt == false) {
+            echo "ERROR: " . $db->errno . " " . $db->error;
+            $db->close();
+            return false;
+        }
+
+        $stmt->bind_param("sssi", $code, $name, $shelf, $id);
+        $result = $stmt->execute();
+        $db->close();
+        return $result;
+    }
+
     function removeShirtType()
     {
         $db = getDB();
@@ -145,6 +162,41 @@ class ShirtType
         $result = $db->query($query);
         $db->close();
         return $result;
+    }
+
+    // 🗑️ DELETE STATIC - called by listshirttypes.inc.php
+    static function deleteShirtType($id)
+    {
+        $db = getDB();
+
+        $query = "DELETE FROM shirt_types WHERE shirt_type_id = ?";
+
+        $stmt = $db->prepare($query);
+        if ($stmt == false) {
+            echo "ERROR: " . $db->errno . " " . $db->error;
+            $db->close();
+            return false;
+        }
+
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
+        $db->close();
+        return $result;
+    }
+
+    // 📊 TOTAL COUNT - called by realtime.php
+    static function getTotalShirtTypes()
+    {
+        $db = getDB();
+        $query = "SELECT COUNT(shirt_type_id) FROM shirt_types";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        $db->close();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
     }
 }
 ?>

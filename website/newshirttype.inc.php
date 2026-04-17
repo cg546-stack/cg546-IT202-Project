@@ -1,3 +1,10 @@
+<!--
+Name: Christian Guadalupe
+Date: 03/11/2026
+Course: IT-202-XXX Internet Applications
+Assignment: Phase 4 - Shirt Inventory Website
+Email: cg546@njit.edu
+-->
 <h2>Enter New Shirt Type Information</h2>
 <form name="newshirttype" action="index.php" method="post">
     <table cellpadding="1" border="0">
